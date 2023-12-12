@@ -83,5 +83,5 @@ tzdata==2023.3
 urllib3==1.26.18
 wcwidth==0.2.8
 websockets==11.0.3
-Werkzeug==2.3.6
+Werkzeug==2.3.8
 yarl==1.9.2
