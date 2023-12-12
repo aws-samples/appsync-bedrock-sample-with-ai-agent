@@ -1,0 +1,134 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  font-size: 10pt;
+}
+
+html {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+.amplify-card {
+  position: relative;
+}
+
+.amplify-view {
+  position: relative;
+}
+
+.amplify-loader{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+}
+
+.amplify-textfield{
+  padding: 10px;
+}
+
+.amplify-selectfield{
+  padding: 10px;
+}
+
+.amplify-textareafield{
+  padding: 10px;
+}
+
+
+.token.operator {
+  background-color: inherit;
+}
+
+.invokeButton {
+  position: absolute;
+  padding: 3px 8px;
+  right: 10px;
+  top: 10px
+}
+
+pre {
+  border: 1px solid rgba(93, 93, 93, 0.463);
+  font-size: 10pt;
+  max-height: 500px;
+  overflow: auto;
+  margin: 0;
+  padding: 10px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;;
+}
+
+.codeBoxHeader {
+  border-left: 1px solid rgba(93, 93, 93, 0.463);
+  border-right: 1px solid rgba(93, 93, 93, 0.463);
+  border-top: 1px solid rgba(93, 93, 93, 0.463);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.sidebar {
+  width: 300px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  padding: 0 10px;
+}
+
+.body {
+  width: calc(100% - 300px);
+  position: absolute;
+  left: 300px;
+  top: 0;
+  height: 100%;
+  padding: 0 10px;
+}
+
+.themeTogglePanel {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  z-index: 100;
+}
+
+.iconButton {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.page {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(214, 214, 214);
+}
+
+.connectedIndicator {
+  border-radius: 50%;
+  background-color: #0c0;
+  width: 8px;
+  height: 8px;
+  margin: 4px;
+  margin-right: 15px;
+  margin-top: 7px;
+}

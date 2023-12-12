@@ -1,0 +1,686 @@
+[
+  {
+    "id": {
+      "S": "7f19d455-d423-47eb-b7bf-e888c63e8682"
+    },
+    "model": {
+      "S": "Model S"
+    },
+    "make": {
+      "S": "Tesla"
+    },
+    "year": {
+      "N": "2020"
+    },
+    "color": {
+      "S": "Red"
+    },
+    "price": {
+      "N": "80000"
+    },
+    "recordType": {
+      "S": "car"
+    }
+  },
+  {
+    "id": {
+      "S": "a7050f59-77ea-4cd6-98d5-361f11c7cad5"
+    },
+    "model": {
+      "S": "Model 3"
+    },
+    "make": {
+      "S": "Tesla"
+    },
+    "year": {
+      "N": "2019"
+    },
+    "color": {
+      "S": "Blue"
+    },
+    "price": {
+      "N": "50000"
+    },
+    "recordType": {
+      "S": "car"
+    }
+  },
+  {
+    "id": {
+      "S": "49d5cedb-2aa8-40af-a4fc-a438eaa22ac7"
+    },
+    "model": {
+      "S": "F-150"
+    },
+    "make": {
+      "S": "Ford"
+    },
+    "year": {
+      "N": "2018"
+    },
+    "color": {
+      "S": "White"
+    },
+    "price": {
+      "N": "30000"
+    },
+    "recordType": {
+      "S": "car"
+    }
+  },
+  {
+    "id": {
+      "S": "b34a8d78-9139-42c8-b5c6-13d5c14d4daf"
+    },
+    "model": {
+      "S": "Civic"
+    },
+    "make": {
+      "S": "Honda"
+    },
+    "year": {
+      "N": "2022"
+    },
+    "color": {
+      "S": "Black"
+    },
+    "price": {
+      "N": "20000"
+    },
+    "recordType": {
+      "S": "car"
+    }
+  },
+  {
+    "id": {
+      "S": "e26c82b3-6c64-49eb-be15-9eb8207b518e"
+    },
+    "model": {
+      "S": "Camry"
+    },
+    "make": {
+      "S": "Toyota"
+    },
+    "year": {
+      "N": "2021"
+    },
+    "color": {
+      "S": "Grey"
+    },
+    "price": {
+      "N": "25000"
+    },
+    "recordType": {
+      "S": "car"
+    }
+  },
+  {
+    "id": {
+      "S": "3967b1ee-ae55-4717-8606-49b00498cb54"
+    },
+    "model": {
+      "S": "3 Series"
+    },
+    "make": {
+      "S": "BMW"
+    },
+    "year": {
+      "N": "2017"
+    },
+    "color": {
+      "S": "Silver"
+    },
+    "price": {
+      "N": "40000"
+    },
+    "recordType": {
+      "S": "car"
+    }
+  },
+  {
+    "id": {
+      "S": "86861124-92f5-442c-b44d-27d1f97ba7fa"
+    },
+    "model": {
+      "S": "A4"
+    },
+    "make": {
+      "S": "Audi"
+    },
+    "year": {
+      "N": "2018"
+    },
+    "color": {
+      "S": "Green"
+    },
+    "price": {
+      "N": "35000"
+    },
+    "recordType": {
+      "S": "car"
+    }
+  },
+  {
+    "id": {
+      "S": "fbaec7c7-db4d-4f77-add2-c08a3a3f30cb"
+    },
+    "model": {
+      "S": "C-Class"
+    },
+    "make": {
+      "S": "Mercedes"
+    },
+    "year": {
+      "N": "2020"
+    },
+    "color": {
+      "S": "Blue"
+    },
+    "price": {
+      "N": "45000"
+    },
+    "recordType": {
+      "S": "car"
+    }
+  },
+  {
+    "id": {
+      "S": "d76e5955-0202-4aad-b86a-9c95e55be7ed"
+    },
+    "model": {
+      "S": "Mustang"
+    },
+    "make": {
+      "S": "Ford"
+    },
+    "year": {
+      "N": "2021"
+    },
+    "color": {
+      "S": "Yellow"
+    },
+    "price": {
+      "N": "26000"
+    },
+    "recordType": {
+      "S": "car"
+    }
+  },
+  {
+    "id": {
+      "S": "a7c5ee51-6cdf-4289-ae3a-e3c525af92d2"
+    },
+    "model": {
+      "S": "Wrangler"
+    },
+    "make": {
+      "S": "Jeep"
+    },
+    "year": {
+      "N": "2019"
+    },
+    "color": {
+      "S": "Orange"
+    },
+    "price": {
+      "N": "28000"
+    },
+    "recordType": {
+      "S": "car"
+    }
+  },
+  {
+    "id": {
+      "S": "f35e2c53-64fb-4c85-af95-77a5ea493dfa"
+    },
+    "name": {
+      "S": "John Doe"
+    },
+    "email": {
+      "S": "johndoe@example.org"
+    },
+    "recordType": {
+      "S": "customer"
+    },
+    "purchases": {
+      "SS": [
+        "d5ab03e3-4a8d-452a-be97-d296f7597c45"
+      ]
+    }
+  },
+  {
+    "id": {
+      "S": "04c58b66-8471-481b-971d-3aecd83791b0"
+    },
+    "name": {
+      "S": "Jane Smith"
+    },
+    "email": {
+      "S": "janesmith@example.org"
+    },
+    "recordType": {
+      "S": "customer"
+    },
+    "purchases": {
+      "SS": [
+        "76141be9-215a-4d5f-96b7-3e8fee870a75"
+      ]
+    }
+  },
+  {
+    "id": {
+      "S": "89143bce-571c-47e2-a39e-c6296748bb16"
+    },
+    "name": {
+      "S": "Bob Johnson"
+    },
+    "email": {
+      "S": "bob.johnson@example.org"
+    },
+    "recordType": {
+      "S": "customer"
+    },
+    "purchases": {
+      "SS": [
+        "baa78574-c269-4bdf-a7e1-cd57847fcd35"
+      ]
+    }
+  },
+  {
+    "id": {
+      "S": "526e2adf-76a7-46a1-98e2-7fda005a8248"
+    },
+    "name": {
+      "S": "Alice Adams"
+    },
+    "email": {
+      "S": "alice.adams@example.org"
+    },
+    "recordType": {
+      "S": "customer"
+    },
+    "purchases": {
+      "SS": [
+        "d1af660e-a5a1-4a89-9035-31c8ce31662a"
+      ]
+    }
+  },
+  {
+    "id": {
+      "S": "e6af4011-6b37-4ebd-b9f3-f22aea4caec7"
+    },
+    "name": {
+      "S": "Michael Miller"
+    },
+    "email": {
+      "S": "michael.miller@example.org"
+    },
+    "recordType": {
+      "S": "customer"
+    },
+    "purchases": {
+      "SS": [
+        "f0a47e97-de95-45b5-bb54-360cfa1befce"
+      ]
+    }
+  },
+  {
+    "id": {
+      "S": "dcaac0f6-a529-4107-a0d9-c7a4f281132b"
+    },
+    "name": {
+      "S": "Sara Davis"
+    },
+    "email": {
+      "S": "sara.davis@example.org"
+    },
+    "recordType": {
+      "S": "customer"
+    },
+    "purchases": {
+      "SS": [
+        "5d596ba5-7003-48ff-aed7-4b4bcc7055bc"
+      ]
+    }
+  },
+  {
+    "id": {
+      "S": "4094201e-1b15-442b-b624-4814b85f30ab"
+    },
+    "name": {
+      "S": "Tom Taylor"
+    },
+    "email": {
+      "S": "tom.taylor@example.org"
+    },
+    "recordType": {
+      "S": "customer"
+    },
+    "purchases": {
+      "SS": [
+        "d7eda533-56c8-46c8-ad7f-affb409ee012"
+      ]
+    }
+  },
+  {
+    "id": {
+      "S": "11f00b76-8517-4506-97d3-62fd691f4e1a"
+    },
+    "name": {
+      "S": "Linda Lewis"
+    },
+    "email": {
+      "S": "linda.lewis@example.org"
+    },
+    "recordType": {
+      "S": "customer"
+    },
+    "purchases": {
+      "SS": [
+        "11cff64f-e6ab-4b99-9c45-3988b91f6b9c"
+      ]
+    }
+  },
+  {
+    "id": {
+      "S": "56ae3018-4979-4d7f-ac3b-4dccd562c6c9"
+    },
+    "name": {
+      "S": "James Jackson"
+    },
+    "email": {
+      "S": "james.jackson@example.org"
+    },
+    "recordType": {
+      "S": "customer"
+    }
+  },
+  {
+    "id": {
+      "S": "95bb79af-38e5-49f3-9fce-0f88a767b910"
+    },
+    "name": {
+      "S": "Karen King"
+    },
+    "email": {
+      "S": "karen.king@example.org"
+    },
+    "recordType": {
+      "S": "customer"
+    }
+  },
+  {
+    "id": {
+      "S": "23d2e8d1-70d2-4e3a-8e9c-3c07d8323c1c"
+    },
+    "name": {
+      "S": "Tom Clark"
+    },
+    "email": {
+      "S": "tom.clark@example.org"
+    },
+    "sales": {
+      "SS": [
+        "d5ab03e3-4a8d-452a-be97-d296f7597c45",
+        "baa78574-c269-4bdf-a7e1-cd57847fcd35",
+        "f0a47e97-de95-45b5-bb54-360cfa1befce"
+      ]
+    },
+    "recordType": {
+      "S": "salesPerson"
+    }
+  },
+  {
+    "id": {
+      "S": "be1156b4-64b0-4e0e-a481-fe86ebee9e77"
+    },
+    "name": {
+      "S": "Sara Lee"
+    },
+    "email": {
+      "S": "sara.lee@example.org"
+    },
+    "recordType": {
+      "S": "salesPerson"
+    }
+  },
+  {
+    "id": {
+      "S": "f79c337e-5e3c-4260-b461-c8ae7f550991"
+    },
+    "name": {
+      "S": "Jim Thompson"
+    },
+    "email": {
+      "S": "jim.thompson@example.org"
+    },
+    "recordType": {
+      "S": "salesPerson"
+    }
+  },
+  {
+    "id": {
+      "S": "d3974da3-c45b-42d0-8b3a-77ba39cda52c"
+    },
+    "name": {
+      "S": "Nancy Wilson"
+    },
+    "email": {
+      "S": "nancy.wilson@example.org"
+    },
+    "sales": {
+      "SS": [
+        "76141be9-215a-4d5f-96b7-3e8fee870a75",
+        "d1af660e-a5a1-4a89-9035-31c8ce31662a",
+        "5d596ba5-7003-48ff-aed7-4b4bcc7055bc",
+        "d7eda533-56c8-46c8-ad7f-affb409ee012"
+      ]
+    },
+    "recordType": {
+      "S": "salesPerson"
+    }
+  },
+  {
+    "id": {
+      "S": "9cde3c09-22e0-460b-b422-ba96c4ee206f"
+    },
+    "name": {
+      "S": "Robert Hall"
+    },
+    "email": {
+      "S": "robert.hall@example.org"
+    },
+    "sales": {
+      "SS": [
+        "11cff64f-e6ab-4b99-9c45-3988b91f6b9c"
+      ]
+    },
+    "recordType": {
+      "S": "salesPerson"
+    }
+  },
+  {
+    "id": {
+      "S": "d5ab03e3-4a8d-452a-be97-d296f7597c45"
+    },
+    "car": {
+      "S": "7f19d455-d423-47eb-b7bf-e888c63e8682"
+    },
+    "salesperson": {
+      "S": "23d2e8d1-70d2-4e3a-8e9c-3c07d8323c1c"
+    },
+    "customer": {
+      "S": "f35e2c53-64fb-4c85-af95-77a5ea493dfa"
+    },
+    "timestamp": {
+      "S": "2022-08-05T12:34:56Z"
+    },
+    "finalPrice": {
+      "N": "25000"
+    },
+    "recordType": {
+      "S": "sale"
+    }
+  },
+  {
+    "id": {
+      "S": "76141be9-215a-4d5f-96b7-3e8fee870a75"
+    },
+    "car": {
+      "S": "7f19d455-d423-47eb-b7bf-e888c63e8682"
+    },
+    "salesperson": {
+      "S": "d3974da3-c45b-42d0-8b3a-77ba39cda52c"
+    },
+    "customer": {
+      "S": "04c58b66-8471-481b-971d-3aecd83791b0"
+    },
+    "timestamp": {
+      "S": "2022-08-10T14:45:12Z"
+    },
+    "finalPrice": {
+      "N": "45000"
+    },
+    "recordType": {
+      "S": "sale"
+    }
+  },
+  {
+    "id": {
+      "S": "baa78574-c269-4bdf-a7e1-cd57847fcd35"
+    },
+    "car": {
+      "S": "49d5cedb-2aa8-40af-a4fc-a438eaa22ac7"
+    },
+    "salesperson": {
+      "S": "23d2e8d1-70d2-4e3a-8e9c-3c07d8323c1c"
+    },
+    "customer": {
+      "S": "89143bce-571c-47e2-a39e-c6296748bb16"
+    },
+    "timestamp": {
+      "S": "2022-08-03T16:23:09Z"
+    },
+    "finalPrice": {
+      "N": "32000"
+    },
+    "recordType": {
+      "S": "sale"
+    }
+  },
+  {
+    "id": {
+      "S": "d1af660e-a5a1-4a89-9035-31c8ce31662a"
+    },
+    "car": {
+      "S": "49d5cedb-2aa8-40af-a4fc-a438eaa22ac7"
+    },
+    "salesperson": {
+      "S": "d3974da3-c45b-42d0-8b3a-77ba39cda52c"
+    },
+    "customer": {
+      "S": "526e2adf-76a7-46a1-98e2-7fda005a8248"
+    },
+    "timestamp": {
+      "S": "2022-08-12T11:45:33Z"
+    },
+    "finalPrice": {
+      "N": "28000"
+    },
+    "recordType": {
+      "S": "sale"
+    }
+  },
+  {
+    "id": {
+      "S": "f0a47e97-de95-45b5-bb54-360cfa1befce"
+    },
+    "car": {
+      "S": "e26c82b3-6c64-49eb-be15-9eb8207b518e"
+    },
+    "salesperson": {
+      "S": "23d2e8d1-70d2-4e3a-8e9c-3c07d8323c1c"
+    },
+    "customer": {
+      "S": "e6af4011-6b37-4ebd-b9f3-f22aea4caec7"
+    },
+    "timestamp": {
+      "S": "2022-08-06T09:23:18Z"
+    },
+    "finalPrice": {
+      "N": "40000"
+    },
+    "recordType": {
+      "S": "sale"
+    }
+  },
+  {
+    "id": {
+      "S": "5d596ba5-7003-48ff-aed7-4b4bcc7055bc"
+    },
+    "car": {
+      "S": "e26c82b3-6c64-49eb-be15-9eb8207b518e"
+    },
+    "salesperson": {
+      "S": "d3974da3-c45b-42d0-8b3a-77ba39cda52c"
+    },
+    "customer": {
+      "S": "dcaac0f6-a529-4107-a0d9-c7a4f281132b"
+    },
+    "timestamp": {
+      "S": "2022-08-09T17:12:22Z"
+    },
+    "finalPrice": {
+      "N": "35000"
+    },
+    "recordType": {
+      "S": "sale"
+    }
+  },
+  {
+    "id": {
+      "S": "d7eda533-56c8-46c8-ad7f-affb409ee012"
+    },
+    "car": {
+      "S": "fbaec7c7-db4d-4f77-add2-c08a3a3f30cb"
+    },
+    "salesperson": {
+      "S": "d3974da3-c45b-42d0-8b3a-77ba39cda52c"
+    },
+    "customer": {
+      "S": "4094201e-1b15-442b-b624-4814b85f30ab"
+    },
+    "timestamp": {
+      "S": "2022-08-07T15:34:49Z"
+    },
+    "finalPrice": {
+      "N": "50000"
+    },
+    "recordType": {
+      "S": "sale"
+    }
+  },
+  {
+    "id": {
+      "S": "11cff64f-e6ab-4b99-9c45-3988b91f6b9c"
+    },
+    "car": {
+      "S": "fbaec7c7-db4d-4f77-add2-c08a3a3f30cb"
+    },
+    "salesperson": {
+      "S": "9cde3c09-22e0-460b-b422-ba96c4ee206f"
+    },
+    "customer": {
+      "S": "11f00b76-8517-4506-97d3-62fd691f4e1a"
+    },
+    "timestamp": {
+      "S": "2022-08-04T10:55:11Z"
+    },
+    "finalPrice": {
+      "N": "22000"
+    },
+    "recordType": {
+      "S": "sale"
+    }
+  }
+]

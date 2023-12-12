@@ -1,0 +1,17 @@
+[
+    {
+		"id": {"S": "sample-agent-websocket"},
+		"agent": {"S": "websocket-agent-id-2"},
+		"timestamp": {"S": "2023-11-01T00:00:00.002Z"}
+    },
+    {
+		"id": {"S": "sample-agent-simple"},
+		"agent": {"S": "sample-agent-id-1"},
+		"timestamp": {"S": "2023-11-01T00:00:00.003Z"}
+    },
+    {
+		"id": {"S": "sample-agent-agent"},
+		"agent": {"S": "action-agent-id-3"},
+		"timestamp": {"S": "2023-11-01T00:00:00.001Z"}
+    }
+]

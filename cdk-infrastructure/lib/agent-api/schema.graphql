@@ -1,0 +1,127 @@
+type ConversationEvent @aws_iam @aws_cognito_user_pools {
+    id: String!
+    timestamp: String!
+    conversationId: ID!
+    sender: String!
+    event: EventMessage!
+}
+
+type EventMessage @aws_iam @aws_cognito_user_pools {
+    message: String
+    innerDialog: String
+    actionRequested: String
+    actionResult: String
+}
+
+input EventMessageInput @aws_cognito_user_pools {
+    message: String
+    innerDialog: String
+    actionRequested: String
+    actionResult: String
+}
+
+type Conversation @aws_cognito_user_pools {
+    id: String!
+    timestamp: String!
+    agent: ID!
+    events: [ConversationEvent!]
+}
+
+input NewConversation @aws_cognito_user_pools {
+    agent: ID!
+}
+
+input NewAgentAction {
+    conversationId: ID!
+    sender: String!
+    event: EventMessageInput!
+}
+
+input NewAgentMetadata {
+    conversationId: ID!
+    agentStartResponding: Boolean
+    agentStopResponding: Boolean
+    agentPartialMessage: String
+}
+
+type AgentMetadata @aws_iam @aws_cognito_user_pools {
+    conversationId: ID!
+    agentStartResponding: Boolean
+    agentStopResponding: Boolean
+    agentPartialMessage: String
+}
+
+input UserAction {
+    message: String
+    actionRequested: String
+    actionResult: String
+}
+
+type Agent @aws_cognito_user_pools {
+    id: ID!
+    timestamp: String!
+    name: String!
+    handlerLambda: String!
+    systemPrompt: String!
+    actions: [Action!]!
+}
+
+type Action @aws_cognito_user_pools {
+    id: String!
+    timestamp: String!
+    name: String!
+    type: String!
+    resource: String!
+}
+
+input NewAgent {
+    name: String!
+    handlerLambda: String!
+    systemPrompt: String!
+    actions: [String!]!
+}
+input NewAction {
+    type: String!,
+    name: String!,
+    resource: String!
+}
+
+type Query @aws_cognito_user_pools {
+    getAgent(id: ID): Agent!
+    listAgents: [Agent]!
+    getAction(id: ID): Action!
+    listActions: [Action]!
+    getConversation(id: ID): Conversation!
+    listConversations: [Conversation]!
+}
+
+type Mutation {
+	createAgent(config: NewAgent!): Agent! @aws_cognito_user_pools
+    deleteAgent(id: ID): Agent! @aws_cognito_user_pools
+    createAction(config: NewAction): Action!  @aws_cognito_user_pools
+    deleteAction(id: ID): Action! @aws_cognito_user_pools
+    createConversation(config: NewConversation): Conversation! @aws_cognito_user_pools
+    deleteConversation(id: ID): Conversation! @aws_cognito_user_pools
+
+    # User side operations
+    userPublishMessage(conversationId: ID, event: UserAction!): ConversationEvent! @aws_cognito_user_pools
+
+    #Agent side operations
+    agentPublishEvent (config: NewAgentAction!): ConversationEvent @aws_iam
+    agentPublishMetadata (config: NewAgentMetadata!): AgentMetadata @aws_iam
+}
+
+type Subscription @aws_api_key{
+	onConversationEvents(conversationId: ID!): ConversationEvent
+		@aws_subscribe(mutations: ["agentPublishEvent"])
+        @aws_cognito_user_pools
+	onConversationMetadata(conversationId: ID!): AgentMetadata
+		@aws_subscribe(mutations: ["agentPublishMetadata"])
+        @aws_cognito_user_pools
+}
+
+schema {
+    query: Query
+    mutation: Mutation
+    subscription: Subscription
+}

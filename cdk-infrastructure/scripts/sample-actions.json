@@ -1,0 +1,9 @@
+[
+	{
+        "id": {"S": "sample-action-car-dealership"},
+        "name": {"S": "Car Dealership"},
+        "resource": {"S": "$SAMPLEAPI"},
+        "timestamp": {"S": "2023-11-01T00:00:00.000Z"},
+        "type": {"S": "Appsync API"}
+	}
+]

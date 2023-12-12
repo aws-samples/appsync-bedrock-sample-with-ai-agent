@@ -1,0 +1,59 @@
+type Car @aws_iam @aws_api_key @aws_cognito_user_pools {
+  id: ID!
+  model: String!
+  make: String!
+  year: Int!
+  color: String!
+  price: Int!
+}
+
+type Customer @aws_iam @aws_api_ke @aws_cognito_user_poolsy {
+  id: ID!
+  name: String!
+  email: String!
+  purchases: [Sale!]!
+}
+
+type Salesperson @aws_iam @aws_api_key @aws_cognito_user_pools {
+  id: ID!
+  name: String!
+  email: String!
+  sales: [Sale!]!
+}
+
+type Sale @aws_iam @aws_api_key @aws_cognito_user_pools {
+  id: ID!
+  car: Car!
+  salesperson: Salesperson!
+  customer: Customer!
+  timestamp: String!
+  finalPrice: Int!
+}
+
+type Email @aws_iam @aws_api_key @aws_cognito_user_pools {
+  id: ID!
+  timestamp: String!
+  to: String!
+  title: String!
+  body: String!
+}
+
+type Query @aws_iam @aws_api_key @aws_cognito_user_pools {
+  listEmails: [Email!]!
+  listCars: [Car!]!
+  listCustomers: [Customer!]!
+  listSales: [Sale!]!
+  listSalespeople: [Salesperson!]!
+}
+
+type Mutation @aws_api_key {
+  addCar(model: String!, make: String!, year: Int!, color: String!, price: Int!): Car!
+  addCustomer(name: String!, email: String!): Customer!
+  addSalesperson(name: String!): Salesperson!
+  makeSale(car: ID!, customer: ID!, salesperson: ID!, finalPrice: Float!): Sale!
+
+  # Sending an email may return permission denied, 
+  # if so, the user can invoke the  request themselves. 
+  # Indicate to the user that the email was not sent and that it requires them to do so in this case.
+  sendEmail(to: String!, title: String!, body: String!): String!
+}

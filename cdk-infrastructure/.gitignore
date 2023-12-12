@@ -1,0 +1,14 @@
+.DS_Store
+*.js
+!jest.config.js
+*.d.ts
+!cdk.context.d.ts
+node_modules
+output.json
+# CDK asset staging directory
+.cdk.staging
+cdk.out
+package-lock.json
+yarn.lock
+lib/example-action-apis/functions-js
+lib/agent-api/functions-js

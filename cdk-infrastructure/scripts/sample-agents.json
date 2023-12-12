@@ -1,0 +1,26 @@
+[
+    {
+		"id": {"S": "sample-agent-id-1"},
+		"actions": {"L": []},
+		"handlerLambda": {"S": "$HANDLERSIMPLE"},
+		"name": {"S": "Bedrock Direct Handler"},
+		"systemPrompt": {"S": ""},
+		"timestamp": {"S": "2023-11-01T00:00:00.000Z"}
+    },
+    {
+		"id": {"S": "websocket-agent-id-2"},
+		"actions": {"L": []},
+		"handlerLambda": {"S": "$HANDLERWEBSOCKET"},
+		"name": {"S": "Bedrock Websocket Handler"},
+		"systemPrompt": {"S": ""},
+		"timestamp": {"S": "2023-11-01T00:00:00.000Z"}
+    },
+    {
+		"id": {"S": "action-agent-id-3"},
+		"actions": {"L": [ {"S": "sample-action-car-dealership"} ]},
+		"handlerLambda": {"S": "$HANDLERAGENT"},
+		"name": {"S": "AppSync GraphQl Agent"},
+		"systemPrompt": {"S": ""},
+		"timestamp": {"S": "2023-11-01T00:00:00.000Z"}
+    }
+]
