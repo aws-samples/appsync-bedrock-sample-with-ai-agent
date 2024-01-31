@@ -8,6 +8,7 @@ import { AgentChatMessage, AgentGraphQLBlock, AgentInnerDialogBlock, AgentJSONBl
 import reactUseCookie from "react-use-cookie";
 import { useAgentConversationMetadata } from "../../apis/agent-api/hooks/useMetadata";
 
+
 function EnterUserSection () {
     const { tokens } = useTheme();
 
@@ -42,10 +43,10 @@ export function ChatRendered () {
     useEffect(() => chatBottomRef.current?.scrollIntoView(), [events, conversationMetadata])
     const [transcriptionText, setTranscriptionText] = useState('');
     const [isRecording, setRecording] = useState(false);
-    const handleRecord = () => {
-        console.log("loaded handle record")
-    };
     
+    function handleRecord() {
+        console.log("handle record")
+    }
 
     if (agentObject.isUnloaded() || !agentObject.value || loadingConversation) {
         return <Loader/>
