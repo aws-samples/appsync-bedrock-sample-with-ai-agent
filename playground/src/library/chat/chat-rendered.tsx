@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useRef } from "react"
+import { ReactNode, useEffect, useRef, useState } from "react"
 import { useParams } from "react-router-dom"
 //@ts-ignore
 import Prism from 'prismjs';
@@ -40,6 +40,12 @@ export function ChatRendered () {
     const chatInvokeQuery = useAgentApiInvokeQuery(chatId)
     setTimeout(() => Prism.highlightAll(), 100);
     useEffect(() => chatBottomRef.current?.scrollIntoView(), [events, conversationMetadata])
+    const [transcriptionText, setTranscriptionText] = useState('');
+    const [isRecording, setRecording] = useState(false);
+    const handleRecord = () => {
+        console.log("loaded handle record")
+    };
+    
 
     if (agentObject.isUnloaded() || !agentObject.value || loadingConversation) {
         return <Loader/>
@@ -174,6 +180,7 @@ export function ChatRendered () {
 
     return (
         <View style={{height: 'calc(100vh - 230px)', overflowY: 'scroll'}}>
+            
             <View>
             <Flex
                 minHeight='calc(100vh - 220px)'
@@ -185,7 +192,15 @@ export function ChatRendered () {
                     <div ref={chatBottomRef}/>
                 </Flex>
             </View>
+            <View>
+            <button id="record-btn" onClick={handleRecord}>
+                {isRecording ? 'Stop Recording' : 'Start Recording'}
+            </button>
+            <p>{isRecording ? 'Recording...' : ''}</p>
+            <p>{transcriptionText}</p>
         </View>
+        </View>
+
     )
 
 }
