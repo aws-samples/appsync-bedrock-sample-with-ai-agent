@@ -194,12 +194,16 @@ export function ChatRendered () {
                 </Flex>
             </View>
             <View>
-            <button id="record-btn" onClick={handleRecord}>
-                {isRecording ? 'Stop Recording' : 'Start Recording'}
-            </button>
-            <p>{isRecording ? 'Recording...' : ''}</p>
-            <p>{transcriptionText}</p>
-        </View>
+                <label htmlFor="audioInputSelect">Choose a mic:</label>
+                <select name="" id="audioInputSelect"></select>
+
+                <button id="recordButton" onClick={handleRecord}>
+                    {isRecording ? 'Stop Recording' : 'Start Recording'}
+                </button>
+                <p>{isRecording ? 'Recording...' : ''}</p>
+                <button id="playButton" disabled>Play Recording</button>
+                <p>{transcriptionText}</p>
+            </View>
         </View>
 
     )
