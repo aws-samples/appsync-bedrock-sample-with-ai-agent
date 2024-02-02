@@ -7,7 +7,7 @@ import {  Flex, Loader, Text, View, useTheme } from "@aws-amplify/ui-react";
 import { AgentChatMessage, AgentGraphQLBlock, AgentInnerDialogBlock, AgentJSONBlock, AgentPartialChatMessage, GraphQLResultBlock, UserChatMessage } from "./chat-items";
 import reactUseCookie from "react-use-cookie";
 import { useAgentConversationMetadata } from "../../apis/agent-api/hooks/useMetadata";
-import AudioRecorder from '../integrations/audio-recorder';
+import { AudioRecorder } from './audio-recorder';
 
 
 function EnterUserSection () {
@@ -177,10 +177,10 @@ export function ChatRendered () {
         )
     }
 
-    //const handleRecordingComplete = (audioBlob) => {
-        // Handle the recorded audio blob here
+    const handleRecordingComplete = (audioBlob) => {
+        //Handle the recorded audio blob here
         // For example, sending it to the backend
-    //  };
+      };
 
     return (
         <View style={{height: 'calc(100vh - 230px)', overflowY: 'scroll'}}>
@@ -196,8 +196,10 @@ export function ChatRendered () {
                     <div ref={chatBottomRef}/>
                 </Flex>
             </View>
-            {/* <AudioRecorder onRecordingComplete={handleRecordingComplete} /> */}
-            <AudioRecorder />
+            <AudioRecorder/>
+            {/*<AudioRecorder onRecordingComplete={handleRecordingComplete} /> */}
+            {/* <AudioRecorder onRecordingComplete={(audioBlob) => handleRecordingComplete(audioBlob)} />*/}
+
         </View>
 
     )
