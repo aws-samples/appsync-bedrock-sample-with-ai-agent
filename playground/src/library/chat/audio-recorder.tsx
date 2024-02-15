@@ -1,79 +1,57 @@
 import React, { useState, useEffect } from "react";
 import { View } from "@aws-amplify/ui-react";
+import { ReactMic } from 'react-mic';
 
-interface AudioRecorderProps {
-  onRecordingComplete: (audioBlob: Blob) => void;
-  transcriptionText: string
-}
-// export const AudioRecorder: JSX.IntrinsicAttributes (props: AudioRecorderProps ) {
-export const AudioRecorder: React.FC<AudioRecorderProps> = (props: AudioRecorderProps) => {
-  const [mediaRecorder, setMediaRecorder] = useState<MediaRecorder | null>(null);
+// interface AudioRecorderProps {
+//   onRecordingComplete: (audioBlob: Blob) => void;
+//   transcriptionText: string
+// }
+
+export function AudioRecorder() {
   const [isRecording, setIsRecording] = useState(false);
-  const [audioChunks, setAudioChunks] = useState<BlobPart[]>([]);
+  const [audioBlobUrl, setAudioBlobUrl] = useState('');
 
-  useEffect(() => {
-    // Request permissions and set up MediaRecorder
-    navigator.mediaDevices.getUserMedia({ audio: true })
-      .then(stream => {
-        const recorder = new MediaRecorder(stream);
-        setMediaRecorder(recorder);
-
-        recorder.ondataavailable = event => {
-          setAudioChunks(currentChunks => [...currentChunks, event.data]);
-        };
-
-        recorder.onstop = () => {
-          const audioBlob = new Blob(audioChunks, { 'type' : 'audio/mp4' });
-          props.onRecordingComplete(audioBlob);
-        };
-      });
-  }, [props.onRecordingComplete, audioChunks]);
-
-  const handleRecord = () => {
-    console.log("handle record")
+  const handleRecording = () => {
     if (!isRecording) {
-      startRecording();
-    } else {
-      stopRecording();
+      setIsRecording(true);
+      console.log("started recording")
+    }
+    else {
+      setIsRecording(false);
+      console.log("stopped recording")
     }
   };
-
   const startRecording = () => {
-    if (mediaRecorder) {
-      mediaRecorder.start();
-      setIsRecording(true);
-      setAudioChunks([]);
-    }
+    setIsRecording(true);
   };
 
   const stopRecording = () => {
-    if (mediaRecorder) {
-      mediaRecorder.stop();
-      setIsRecording(false);
-    }
+    setIsRecording(false);
   };
 
+  const onData = (recordedBlob: any) => {
+    console.log('chunk of real-time data is: ', recordedBlob);
+  };
 
-  return             
-    <View>
-        <label htmlFor="audioInputSelect">Choose a mic:</label>
-        <select name="" id="audioInputSelect"></select>
+  const onStop = (recordedBlob: { blobURL: React.SetStateAction<string>; }) => {
+    console.log('recordedBlob is: ', recordedBlob);
+    setAudioBlobUrl(recordedBlob.blobURL);
+  };
 
-        <button id="recordButton" onClick={handleRecord}>
-            {isRecording ? 'Stop Recording' : 'Start Recording'}
-        </button>
-        <p>{isRecording ? 'Recording...' : ''}</p>
-        <button id="playButton" disabled>Play Recording</button>
-        <p>{props.transcriptionText}</p>
-    </View>
-  // //*return (
-  //   <View>
-  //       <button onClick={handleRecord}>
-  //           {isRecording ? 'Stop Recording' : 'Start Recording'}
-  //       </button>
-  //       <p>{isRecording ? 'Recording...' : ''}</p>
-  //   </View>
-  // );
-};
+  return (
+    <div>
+      <ReactMic
+        record={isRecording}
+        className="sound-wave"
+        onStop={onStop}
+        onData={onData}
+        strokeColor="#000000"
+        backgroundColor="#FF4081" />
 
-export default AudioRecorder;
+      <button id="record-btn" onClick={handleRecording} >{isRecording ? 'Stop Recording' : 'Start Recording'} </button>
+      <p>{isRecording ? 'Recording...' : ''}</p>
+      <audio src={audioBlobUrl} controls={true} />
+    </div>
+  );
+}
+

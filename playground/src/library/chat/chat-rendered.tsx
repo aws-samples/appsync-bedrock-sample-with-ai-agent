@@ -177,7 +177,7 @@ export function ChatRendered () {
         )
     }
 
-    const handleRecordingComplete = (audioBlob) => {
+    const handleRecordingComplete = (audioBlob: any) => {
         //Handle the recorded audio blob here
         // For example, sending it to the backend
       };
