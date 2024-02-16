@@ -7,7 +7,7 @@ import {  Flex, Loader, Text, View, useTheme } from "@aws-amplify/ui-react";
 import { AgentChatMessage, AgentGraphQLBlock, AgentInnerDialogBlock, AgentJSONBlock, AgentPartialChatMessage, GraphQLResultBlock, UserChatMessage } from "./chat-items";
 import reactUseCookie from "react-use-cookie";
 import { useAgentConversationMetadata } from "../../apis/agent-api/hooks/useMetadata";
-import { AudioRecorder } from './audio-recorder';
+
 
 
 function EnterUserSection () {
@@ -196,7 +196,7 @@ export function ChatRendered () {
                     <div ref={chatBottomRef}/>
                 </Flex>
             </View>
-            <AudioRecorder/>
+
             {/*<AudioRecorder onRecordingComplete={handleRecordingComplete} /> */}
             {/* <AudioRecorder onRecordingComplete={(audioBlob) => handleRecordingComplete(audioBlob)} />*/}
 

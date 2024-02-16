@@ -42,15 +42,18 @@ export function AudioRecorder() {
     <div>
       <ReactMic
         record={isRecording}
-        className="sound-wave"
+        className={'hidden'}
         onStop={onStop}
         onData={onData}
         strokeColor="#000000"
-        backgroundColor="#FF4081" />
+        backgroundColor="rgb(4, 125, 149)" />
+
+
 
       <button id="record-btn" onClick={handleRecording} >{isRecording ? 'Stop Recording' : 'Start Recording'} </button>
       <p>{isRecording ? 'Recording...' : ''}</p>
-      <audio src={audioBlobUrl} controls={true} />
+      {audioBlobUrl && <audio src={audioBlobUrl} controls />}
+
     </div>
   );
 }
