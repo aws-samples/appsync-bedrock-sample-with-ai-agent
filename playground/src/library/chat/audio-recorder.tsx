@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View } from "@aws-amplify/ui-react";
+import { Button, Icon, View, Grid, useTheme } from '@aws-amplify/ui-react';
 import { ReactMic } from 'react-mic';
 
 // interface AudioRecorderProps {
@@ -38,22 +38,38 @@ export function AudioRecorder() {
     setAudioBlobUrl(recordedBlob.blobURL);
   };
 
+  const { tokens } = useTheme();
+
   return (
     <div>
-      <ReactMic
-        record={isRecording}
-        className={'hidden'}
-        onStop={onStop}
-        onData={onData}
-        strokeColor="#000000"
-        backgroundColor="rgb(4, 125, 149)" />
-
-
-
-      <button id="record-btn" onClick={handleRecording} >{isRecording ? 'Stop Recording' : 'Start Recording'} </button>
-      <p>{isRecording ? 'Recording...' : ''}</p>
-      {audioBlobUrl && <audio src={audioBlobUrl} controls />}
-
+      <Grid
+      templateColumns="1fr 1fr 1fr"
+      templateRows="4rem"
+      gap={tokens.space.small}
+      >
+        <View>
+            <Button id="record-btn"
+                    onClick={handleRecording}
+                    variation="primary"
+                    //isLoading={!isRecording}
+                    //loadingText={}
+                    colorTheme={!isRecording ? 'success' : 'error'}>
+              {isRecording ? 'Stop Recording' : 'Start Recording'}
+            </Button>
+        </View>
+        <View>
+          <ReactMic
+            record={isRecording}
+            className={'hidden'}
+            onStop={onStop}
+            onData={onData}
+            strokeColor="#000000"
+            backgroundColor="rgb(4, 125, 149)" />
+        </View>
+        <View>
+          {audioBlobUrl && <audio src={audioBlobUrl} controls />}
+        </View>
+      </Grid>
     </div>
   );
 }
