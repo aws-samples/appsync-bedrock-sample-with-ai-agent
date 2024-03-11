@@ -8,7 +8,9 @@ import { AgentChatMessage, AgentGraphQLBlock, AgentInnerDialogBlock, AgentJSONBl
 import reactUseCookie from "react-use-cookie";
 import { useAgentConversationMetadata } from "../../apis/agent-api/hooks/useMetadata";
 
-
+/*
+* ...
+* */
 
 function EnterUserSection () {
     const { tokens } = useTheme();
@@ -43,8 +45,6 @@ export function ChatRendered () {
     setTimeout(() => Prism.highlightAll(), 100);
     useEffect(() => chatBottomRef.current?.scrollIntoView(), [events, conversationMetadata])
 
-    
-    
 
     if (agentObject.isUnloaded() || !agentObject.value || loadingConversation) {
         return <Loader/>

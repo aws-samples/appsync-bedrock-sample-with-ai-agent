@@ -8,6 +8,10 @@ import * as iam from 'aws-cdk-lib/aws-iam';
 import { Construct } from 'constructs';
 import { addJsResolver } from './appsync-js-functions';
 
+/*
+* ...
+* */
+
 interface AgentApiProps {
     enableConstructingAgents: boolean
     cognito: cognito.UserPool
@@ -28,7 +32,7 @@ export function buildAgentApi (scope: Construct, props: AgentApiProps) {
             path.join(__dirname, './schema.graphql')
         ),
         authorizationConfig: {
-            defaultAuthorization: {
+            defaultAuthorization: {ac
                 authorizationType: awsAppsync.AuthorizationType.USER_POOL,
                 userPoolConfig: {
                     userPool: props.cognito

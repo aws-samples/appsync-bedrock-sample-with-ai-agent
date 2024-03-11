@@ -9,6 +9,9 @@ import { useAgentApiConversation } from "../apis/agent-api/hooks/useConversation
 import { useAgentConversationMetadata, useResetAgentConversationMetadata } from "../apis/agent-api/hooks/useMetadata"
 import {AudioRecorder} from "../library/chat/audio-recorder";
 
+/*
+* Chat Dialog & Actions
+* */
 
 export function AIAgentViewChat () {
     
@@ -21,6 +24,9 @@ export function AIAgentViewChat () {
     const submitMessage = useAgentApiSendMessage(chatId)
     useAgentApiSubscribeConversation(chatId)
 
+    //TODO: Add a lanuage selector
+    //https://ui.docs.amplify.aws/react/components/selectfield
+
     //@ts-nocheck
     useEffect(() => {
         if (conversationMetadata.partialMessage && !conversationMetadata.responding) {
@@ -32,13 +38,36 @@ export function AIAgentViewChat () {
         return <Loader/>
     }
 
+    const handleRecordingComplete = async (audioBlob:any) => {
+      // Fetch pre-signed URL from your backend
+      const response = await fetch('/api/get-presigned-url');
+      const { uploadURL } = await response.json();
+
+      // Use fetch or Axios to PUT the blob to the pre-signed URL
+      const uploadResponse = await fetch(uploadURL, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'audio/webm;codecs=opus', // Or the correct content type of your audio blob
+        },
+        body: audioBlob,
+      });
+
+      if (uploadResponse.ok) {
+        console.log('Upload successful');
+        // Optionally, notify your backend about the new file or update your UI accordingly
+      } else {
+        console.error('Upload failed');
+      }
+    };
+
+
     return (
         <Flex>
             <View width={900}>
                 <Container heading={`Chatting with '${agentObject.value.name}'`} minHeight={500} padBody={0}>
                     <ChatRendered/>
                 </Container>
-                <AudioRecorder/>
+                <AudioRecorder onRecordingComplete={handleRecordingComplete}/>
                 <Card>
                     {
                         conversationMetadata.responding && <Loader variation="linear"/>

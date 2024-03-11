@@ -6,6 +6,10 @@ const cdkOutputs = JSON.parse(readFileSync('./cdk.out/artifacts.json', 'utf8'))[
 const dynamoDB = new DynamoDBClient({ region: cdkOutputs['Region'] })
 const docClient = DynamoDBDocumentClient.from(dynamoDB);
 
+/*
+* Prepopulate database for care dealership example
+* */
+
 async function DumpIntoTable(tableName, fileName, env = {}){
 
     let rawFile = readFileSync('./scripts/' + fileName + '.json', 'utf-8')

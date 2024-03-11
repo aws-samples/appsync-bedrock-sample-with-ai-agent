@@ -2,12 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Button, Icon, View, Grid, useTheme } from '@aws-amplify/ui-react';
 import { ReactMic } from 'react-mic';
 
-// interface AudioRecorderProps {
-//   onRecordingComplete: (audioBlob: Blob) => void;
-//   transcriptionText: string
-// }
+interface AudioRecorderProps {
+  onRecordingComplete: (audioBlob: Blob) => void;
+}
 
-export function AudioRecorder() {
+export function AudioRecorder({ onRecordingComplete }: AudioRecorderProps) {
   const [isRecording, setIsRecording] = useState(false);
   const [audioBlobUrl, setAudioBlobUrl] = useState('');
 
@@ -33,9 +32,10 @@ export function AudioRecorder() {
     console.log('chunk of real-time data is: ', recordedBlob);
   };
 
-  const onStop = (recordedBlob: { blobURL: React.SetStateAction<string>; }) => {
+  const onStop = (recordedBlob: { blobURL: React.SetStateAction<string>; blob: Blob }) => {
     console.log('recordedBlob is: ', recordedBlob);
     setAudioBlobUrl(recordedBlob.blobURL);
+    onRecordingComplete(recordedBlob.blob); // Call the onRecordingComplete prop function with the audio blob
   };
 
   const { tokens } = useTheme();
@@ -51,8 +51,6 @@ export function AudioRecorder() {
             <Button id="record-btn"
                     onClick={handleRecording}
                     variation="primary"
-                    //isLoading={!isRecording}
-                    //loadingText={}
                     colorTheme={!isRecording ? 'success' : 'error'}>
               {isRecording ? 'Stop Recording' : 'Start Recording'}
             </Button>
@@ -73,4 +71,3 @@ export function AudioRecorder() {
     </div>
   );
 }
-
