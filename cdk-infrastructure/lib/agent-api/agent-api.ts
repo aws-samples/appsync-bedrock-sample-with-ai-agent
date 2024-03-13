@@ -32,7 +32,7 @@ export function buildAgentApi (scope: Construct, props: AgentApiProps) {
             path.join(__dirname, './schema.graphql')
         ),
         authorizationConfig: {
-            defaultAuthorization: {ac
+            defaultAuthorization: {
                 authorizationType: awsAppsync.AuthorizationType.USER_POOL,
                 userPoolConfig: {
                     userPool: props.cognito

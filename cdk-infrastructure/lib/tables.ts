@@ -9,6 +9,14 @@ import { Construct } from 'constructs';
 
 export function buildTables (scope: Construct) {
 
+	// Audio table - for the list of audio recordings
+	const audioTable = new dynamodb.Table(scope, 'MyAudioRecordingsDDBTable', {
+		partitionKey: {
+			name: 'id',
+			type: dynamodb.AttributeType.STRING
+		},
+	})
+
 	// Agents table - for the list of agents 
 	const agentTable = new dynamodb.Table(scope, 'MyAgentsDDBTable', {
 		partitionKey: {
@@ -54,6 +62,7 @@ export function buildTables (scope: Construct) {
 
 	// Expose tables to other constructs that need to be build
 	return {
+		audioTable,
 		agentTable,
 		actionTable,
 		conversationTable,
