@@ -45,7 +45,7 @@ export function AIAgentViewChat () {
 
       // Use fetch or Axios to PUT the blob to the pre-signed URL
       const uploadResponse = await fetch(uploadURL, {
-        method: 'PUT',
+        method: 'POST',
         headers: {
           'Content-Type': 'audio/webm;codecs=opus', // Or the correct content type of your audio blob
         },

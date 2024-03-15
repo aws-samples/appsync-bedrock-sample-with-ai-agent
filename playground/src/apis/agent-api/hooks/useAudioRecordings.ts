@@ -41,6 +41,7 @@ export function useAgentApiAudioRecordings (cid: string = '') {
                     
                     newTargetAudioRecordings.push(result.userPublishAudio)
                     //newAudioRecordings[cid] = Loadable.loaded(targetAudioRecordings)
+                    newAudioRecordings[cid] = Loadable.loaded(newTargetAudioRecordings);
                     return newAudioRecordings
                 })
             })

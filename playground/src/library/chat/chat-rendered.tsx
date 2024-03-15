@@ -70,6 +70,9 @@ export function ChatRendered () {
 
             if (event.event.message) {
                 renderedChat.push(
+                    <button />
+                )
+                renderedChat.push(
                     <UserChatMessage
                         text={event.event.message}
                         event={event}
@@ -177,11 +180,6 @@ export function ChatRendered () {
         )
     }
 
-    const handleRecordingComplete = (audioBlob: any) => {
-        //Handle the recorded audio blob here
-        // For example, sending it to the backend
-      };
-
     return (
         <View style={{height: 'calc(100vh - 230px)', overflowY: 'scroll'}}>
             
@@ -196,9 +194,6 @@ export function ChatRendered () {
                     <div ref={chatBottomRef}/>
                 </Flex>
             </View>
-
-            {/*<AudioRecorder onRecordingComplete={handleRecordingComplete} /> */}
-            {/* <AudioRecorder onRecordingComplete={(audioBlob) => handleRecordingComplete(audioBlob)} />*/}
 
         </View>
 
