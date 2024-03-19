@@ -4,6 +4,7 @@ type ConversationEvent @aws_iam @aws_cognito_user_pools {
     conversationId: ID!
     sender: String!
     event: EventMessage!
+    audioFileUrl: String
 }
 
 type EventMessage @aws_iam @aws_cognito_user_pools {

@@ -9,12 +9,13 @@ export interface AudioRecording {
 
 
 export interface ConversationEvent {
-    id: string
-    timestamp: string
-    conversationId: string
-    sender: string
-    event: EventMessage
-    disableTyping: boolean
+  id: string
+  timestamp: string
+  conversationId: string
+  sender: string
+  event: EventMessage
+  disableTyping: boolean
+  audioFileUrl?: string
 }
 
 export interface EventMessage {
