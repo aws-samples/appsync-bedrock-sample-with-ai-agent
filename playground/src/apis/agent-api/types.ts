@@ -23,6 +23,7 @@ export interface EventMessage {
 	innerDialog?: string
     actionRequested?: string
 	actionResult?: string
+    audioFileUrl?: string
 }
 
 export interface Conversation {
