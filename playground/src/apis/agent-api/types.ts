@@ -15,7 +15,6 @@ export interface ConversationEvent {
   sender: string
   event: EventMessage
   disableTyping: boolean
-  audioFileUrl?: string
 }
 
 export interface EventMessage {

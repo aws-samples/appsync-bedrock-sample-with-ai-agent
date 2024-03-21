@@ -25,6 +25,7 @@ const loadConversationQuery = new GraphqlQuery<LoadConversationResult>(`
                     innerDialog
                     actionRequested
                     actionResult
+                    audioFileUrl
                 }
             }
         }

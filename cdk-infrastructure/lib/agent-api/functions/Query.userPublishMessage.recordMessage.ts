@@ -10,8 +10,8 @@ export function request(ctx: Context) {
         conversationId: ctx.arguments.conversationId,
         sender: 'user',
         event: ctx.arguments.event,
-        timestamp: util.time.nowISO8601(),
-        audioFileUrl: ctx.arguments.audioFileUrl // Add the audioFileUrl argument
+        timestamp: util.time.nowISO8601()
+        //audioFileUrl: ctx.arguments.audioFileUrl // Add the audioFileUrl argument
     }),
   };
 }

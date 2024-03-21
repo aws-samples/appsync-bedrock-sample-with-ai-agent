@@ -79,7 +79,7 @@ export function AIAgentViewChat () {
                             placeholder="Type your message here"
                             onKeyDown={(e) => {
                                 if (e.key === 'Enter') {
-                                    const audioFileUrl = "www.wevegotthis.com"
+                                    const audioFileUrl = "http://www.kittentech.com"
                                     // Send the message with the audio file URL
                                     submitMessage({ message: chatString, audioFileUrl: audioFileUrl });
                                     setChatString('')

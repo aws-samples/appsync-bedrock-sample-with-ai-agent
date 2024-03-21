@@ -69,9 +69,7 @@ export function ChatRendered () {
             }
 
             if (event.event.message) {
-                renderedChat.push(
-                    <button />
-                )
+
                 renderedChat.push(
                     <UserChatMessage
                         text={event.event.message}
@@ -79,6 +77,12 @@ export function ChatRendered () {
                         lastEventTime={lastEffectEndTime}
                         key={event.id}
                     />
+                )
+                renderedChat.push(
+                    <Text>{event.event.audioFileUrl} </Text>
+                )
+                renderedChat.push(
+                    <Text><a href={event.event.audioFileUrl}>Meow to me</a> </Text>
                 )
             }
 
