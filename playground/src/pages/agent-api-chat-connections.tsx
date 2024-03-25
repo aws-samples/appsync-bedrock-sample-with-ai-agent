@@ -5,6 +5,9 @@ import { Container } from "../library/container"
 import { ConnectedItem } from "../library/chat/tool-conntection"
 import { useAgentApiConversation } from "../apis/agent-api/hooks/useConversations"
 
+/*
+* Actions sidebar
+* */
 
 export function AIAgentChatConnections () {
     

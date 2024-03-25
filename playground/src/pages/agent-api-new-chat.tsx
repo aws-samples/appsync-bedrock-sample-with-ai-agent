@@ -5,6 +5,10 @@ import { useState } from "react"
 import { useAgentApiAgentList, useAgentApiCreateConversation } from "../apis/agent-api"
 import { Container } from '../library/container';
 
+/*
+* Renders the Choose your Agent options when starting a new chat
+* */
+
 export function AIAgentNewChat () {
     
     const agentListObject = useAgentApiAgentList()

@@ -25,6 +25,7 @@ const loadConversationQuery = new GraphqlQuery<LoadConversationResult>(`
                     innerDialog
                     actionRequested
                     actionResult
+                    audioFileUrl
                 }
             }
         }
@@ -49,7 +50,7 @@ export function useAgentApiConversationWithMessages (id: string = '') {
             return newConversationEvents
         })
 
-        loadConversationQuery.invoke({id})
+        loadConversationQuery.invoke({id}) //Invoke
             .then(({getConversation: result}) => 
                 setState((data) => {
 

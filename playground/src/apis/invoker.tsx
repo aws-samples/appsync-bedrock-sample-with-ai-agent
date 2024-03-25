@@ -1,23 +1,29 @@
 import { Auth } from "aws-amplify";
 import { agentApiEndpoint } from "../endpoints";
 
+/*
+* Invokes Agent API Function using GraphQL
+* */
+
 export async function Invoke<T> (query: string, variables: any, endpoint: string, authHeaders: any) {
 
-    const response = await fetch(endpoint, {
-        method: 'POST',
+    const response = await fetch(endpoint, { //endpoint is a URL
+        method: 'POST', //make POST Request to GraphQL endpoint
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
             ...authHeaders,
         },
         body: JSON.stringify({
-            query,
-            variables: variables || {}
+            query, //String - GraphQL query/mutation
+            variables: variables || {} //optional variables
         })
     });
 
+    //call API
     const responseBody = await response.json();
 
+    //throw any errors
     if (responseBody.errors) {
         throw new Error(responseBody.errors[0].message);
     }
@@ -39,6 +45,7 @@ export class GraphqlQuery<T> {
         public query: string
     ) { }
 
+    //makes requests, uses JWT token from session in Authorization header
     invoke(variables : any = {}){
         return InvokeAgentAPI<T>(this.query, variables);
     }   

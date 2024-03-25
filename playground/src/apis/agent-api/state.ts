@@ -84,6 +84,13 @@ export const ConversationEvents = atom<ConversationMessagesStore> ({
     default: {},
 })
 
+type AudioStore = Record<string, Loadable<TAgentApi.AudioRecording[]>>
+
+export const AudioRecordings = atom<AudioStore> ({
+    key: 'AgentApiAudioRecordings',
+    default: {},
+})
+
 type PartialResultsStore = TAgentApi.ConversationMetadataState
 
 export const ConversationPartialResults = atom<PartialResultsStore>({

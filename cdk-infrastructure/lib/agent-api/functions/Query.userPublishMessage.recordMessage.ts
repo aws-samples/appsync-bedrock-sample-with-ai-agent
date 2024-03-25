@@ -11,6 +11,7 @@ export function request(ctx: Context) {
         sender: 'user',
         event: ctx.arguments.event,
         timestamp: util.time.nowISO8601()
+        //audioFileUrl: ctx.arguments.audioFileUrl // Add the audioFileUrl argument
     }),
   };
 }
