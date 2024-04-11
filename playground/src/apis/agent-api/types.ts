@@ -1,10 +1,20 @@
-export interface ConversationEvent {
+export interface AudioRecording {
     id: string
     timestamp: string
     conversationId: string
+    eventId: string
     sender: string
-    event: EventMessage
-    disableTyping: boolean
+    url: string
+}
+
+
+export interface ConversationEvent {
+  id: string
+  timestamp: string
+  conversationId: string
+  sender: string
+  event: EventMessage
+  disableTyping: boolean
 }
 
 export interface EventMessage {
@@ -12,6 +22,7 @@ export interface EventMessage {
 	innerDialog?: string
     actionRequested?: string
 	actionResult?: string
+    audioFileUrl?: string
 }
 
 export interface Conversation {

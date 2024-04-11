@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "howler": "^2.2.4",
+    "react-mic": "^12.4.6"
+  },
+  "devDependencies": {
+    "@types/howler": "^2.2.11",
+    "@types/react-mic": "^12.4.6"
+  }
+}

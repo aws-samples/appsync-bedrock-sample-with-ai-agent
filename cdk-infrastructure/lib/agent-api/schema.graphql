@@ -11,6 +11,7 @@ type EventMessage @aws_iam @aws_cognito_user_pools {
     innerDialog: String
     actionRequested: String
     actionResult: String
+    audioFileUrl: String
 }
 
 input EventMessageInput @aws_cognito_user_pools {
@@ -55,6 +56,7 @@ input UserAction {
     message: String
     actionRequested: String
     actionResult: String
+    audioFileUrl: String
 }
 
 type Agent @aws_cognito_user_pools {

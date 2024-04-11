@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useRef } from "react"
+import { ReactNode, useEffect, useRef, useState } from "react"
 import { useParams } from "react-router-dom"
 //@ts-ignore
 import Prism from 'prismjs';
@@ -7,6 +7,10 @@ import {  Flex, Loader, Text, View, useTheme } from "@aws-amplify/ui-react";
 import { AgentChatMessage, AgentGraphQLBlock, AgentInnerDialogBlock, AgentJSONBlock, AgentPartialChatMessage, GraphQLResultBlock, UserChatMessage } from "./chat-items";
 import reactUseCookie from "react-use-cookie";
 import { useAgentConversationMetadata } from "../../apis/agent-api/hooks/useMetadata";
+
+/*
+* ...
+* */
 
 function EnterUserSection () {
     const { tokens } = useTheme();
@@ -41,6 +45,7 @@ export function ChatRendered () {
     setTimeout(() => Prism.highlightAll(), 100);
     useEffect(() => chatBottomRef.current?.scrollIntoView(), [events, conversationMetadata])
 
+
     if (agentObject.isUnloaded() || !agentObject.value || loadingConversation) {
         return <Loader/>
     }
@@ -64,6 +69,7 @@ export function ChatRendered () {
             }
 
             if (event.event.message) {
+
                 renderedChat.push(
                     <UserChatMessage
                         text={event.event.message}
@@ -71,6 +77,12 @@ export function ChatRendered () {
                         lastEventTime={lastEffectEndTime}
                         key={event.id}
                     />
+                )
+                renderedChat.push(
+                    <Text>{event.event.audioFileUrl} </Text>
+                )
+                renderedChat.push(
+                    <Text><a href={event.event.audioFileUrl}>Meow to me</a> </Text>
                 )
             }
 
@@ -174,6 +186,7 @@ export function ChatRendered () {
 
     return (
         <View style={{height: 'calc(100vh - 230px)', overflowY: 'scroll'}}>
+            
             <View>
             <Flex
                 minHeight='calc(100vh - 220px)'
@@ -185,7 +198,9 @@ export function ChatRendered () {
                     <div ref={chatBottomRef}/>
                 </Flex>
             </View>
+
         </View>
+
     )
 
 }

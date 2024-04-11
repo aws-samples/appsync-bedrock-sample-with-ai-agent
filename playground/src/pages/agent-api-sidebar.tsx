@@ -4,6 +4,10 @@ import { useAgentApiAgentList, useAgentApiConversationList } from "../apis/agent
 import { Button, Flex, Loader, View } from "@aws-amplify/ui-react"
 import { Container } from "../library/container"
 
+/*
+* Renders conversational history
+* */
+
 export function AIAgentSidebar () {
     
     const conversationsObject = useAgentApiConversationList()

@@ -19,6 +19,7 @@ const sendConversationMessageQuery = new GraphqlQuery<SendMessageResult>(`
                 innerDialog
                 actionRequested
                 actionResult
+                audioFileUrl
             }
         }
     }
